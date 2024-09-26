@@ -23,7 +23,6 @@ pip install uv
 
 # waandb 
 uv pip install wandb
-wandb login --cloud ba1de0b3393dcd888d28c0f8fa5deef027df47e6
 
 # Dacon
 wget https://bit.ly/3gMPScE -O dacon_submit_api-0.0.4-py3-none-any.zip
