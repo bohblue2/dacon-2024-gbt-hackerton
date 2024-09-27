@@ -13,6 +13,7 @@ from src.utils import get_sample_submission
 from torch.utils.data import DataLoader
 
 def main():
+    CFG.model_type = "secondary"
     wrun = wandb.init(project="dacon-gbt-2024-hackerton", config=CFG)
 
     # Data loading and preprocessing
