@@ -22,7 +22,8 @@ conda install -c huggingface transformers huggingface_hub scikit-learn -y
 pip install uv
 
 # waandb 
-uv pip install wandb
+uv pip install wandb pgwalker
+# NOTE: wandb login with your api key 
 
 # Dacon
 wget https://bit.ly/3gMPScE -O dacon_submit_api-0.0.4-py3-none-any.zip
