@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/run.py", line 50, in <module>
+    main()
+  File "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/run.py", line 19, in main
+    train_df, test_df = load_data(root_path=root_path)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/src/data_processing.py", line 6, in load_data
+    train_df = pd.read_csv(f"{root_path}/train.csv")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/dacon-2024-gbt-hackerton/train.csv'

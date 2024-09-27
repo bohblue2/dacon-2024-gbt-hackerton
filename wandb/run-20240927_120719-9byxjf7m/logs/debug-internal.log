@@ -1,0 +1,240 @@
+2024-09-27 12:07:19,238 INFO    StreamThr :54163 [internal.py:wandb_internal():85] W&B internal server running at pid: 54163, started at: 2024-09-27 12:07:19.237364
+2024-09-27 12:07:19,240 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: status
+2024-09-27 12:07:19,245 INFO    WriterThread:54163 [datastore.py:open_for_write():87] open: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/run-9byxjf7m.wandb
+2024-09-27 12:07:19,245 DEBUG   SenderThread:54163 [sender.py:send():379] send: header
+2024-09-27 12:07:19,270 DEBUG   SenderThread:54163 [sender.py:send():379] send: run
+2024-09-27 12:07:19,989 INFO    SenderThread:54163 [dir_watcher.py:__init__():211] watching files in: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files
+2024-09-27 12:07:19,989 INFO    SenderThread:54163 [sender.py:_start_run_threads():1188] run started: 9byxjf7m with start time 1727406439.238934
+2024-09-27 12:07:19,999 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: check_version
+2024-09-27 12:07:19,999 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: check_version
+2024-09-27 12:07:21,073 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: run_start
+2024-09-27 12:07:21,084 DEBUG   HandlerThread:54163 [system_info.py:__init__():26] System info init
+2024-09-27 12:07:21,084 DEBUG   HandlerThread:54163 [system_info.py:__init__():41] System info init done
+2024-09-27 12:07:21,084 INFO    HandlerThread:54163 [system_monitor.py:start():194] Starting system monitor
+2024-09-27 12:07:21,084 INFO    SystemMonitor:54163 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-09-27 12:07:21,084 INFO    HandlerThread:54163 [system_monitor.py:probe():214] Collecting system info
+2024-09-27 12:07:21,086 INFO    SystemMonitor:54163 [interfaces.py:start():188] Started cpu monitoring
+2024-09-27 12:07:21,090 INFO    SystemMonitor:54163 [interfaces.py:start():188] Started disk monitoring
+2024-09-27 12:07:21,091 ERROR   HandlerThread:54163 [gpu_apple.py:probe():176] GPU stats error: [Errno 2] No such file or directory: '/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats'
+Traceback (most recent call last):
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 164, in probe
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats'
+2024-09-27 12:07:21,094 INFO    SystemMonitor:54163 [interfaces.py:start():188] Started gpuapple monitoring
+2024-09-27 12:07:21,094 ERROR   gpuapple  :54163 [gpu_apple.py:sample():110] GPU stats error: [Errno 2] No such file or directory: '/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats'
+Traceback (most recent call last):
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats'
+2024-09-27 12:07:21,097 DEBUG   HandlerThread:54163 [system_info.py:probe():152] Probing system
+2024-09-27 12:07:21,098 INFO    SystemMonitor:54163 [interfaces.py:start():188] Started memory monitoring
+2024-09-27 12:07:21,098 INFO    SystemMonitor:54163 [interfaces.py:start():188] Started network monitoring
+2024-09-27 12:07:21,102 DEBUG   HandlerThread:54163 [system_info.py:_probe_git():137] Probing git
+2024-09-27 12:07:21,117 DEBUG   HandlerThread:54163 [system_info.py:_probe_git():145] Probing git done
+2024-09-27 12:07:21,118 DEBUG   HandlerThread:54163 [system_info.py:probe():200] Probing system done
+2024-09-27 12:07:21,118 DEBUG   HandlerThread:54163 [system_monitor.py:probe():223] {'os': 'macOS-14.2.1-arm64-arm-64bit', 'python': '3.11.9', 'heartbeatAt': '2024-09-27T03:07:21.098296', 'startedAt': '2024-09-27T03:07:19.227361', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/run.py', 'codePathLocal': 'run.py', 'codePath': 'run.py', 'git': {'remote': 'https://github.com/bohblue2/dacon-2024-gbt-hackerton', 'commit': '4b0cc3b6eecebd7a967b7c82a67240aeee13a238'}, 'email': 'brian.bae.contact@gmail.com', 'root': '/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton', 'host': 'baeyeongmin-ui-MacBookAir.local', 'username': 'baeyeongmin', 'executable': '/Users/baeyeongmin/micromamba/envs/enigma_mdms/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'cpu_freq': {'current': 3504, 'min': 600, 'max': 3504}, 'cpu_freq_per_core': [{'current': 3504, 'min': 600, 'max': 3504}], 'disk': {'/': {'total': 228.27386474609375, 'used': 205.19702911376953}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 16.0}}
+2024-09-27 12:07:21,118 INFO    HandlerThread:54163 [system_monitor.py:probe():224] Finished collecting system info
+2024-09-27 12:07:21,118 INFO    HandlerThread:54163 [system_monitor.py:probe():227] Publishing system info
+2024-09-27 12:07:21,118 DEBUG   HandlerThread:54163 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-09-27 12:07:21,998 INFO    Thread-12 :54163 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/conda-environment.yaml
+2024-09-27 12:07:23,101 ERROR   gpuapple  :54163 [gpu_apple.py:sample():110] GPU stats error: [Errno 2] No such file or directory: '/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats'
+Traceback (most recent call last):
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats'
+2024-09-27 12:07:24,409 DEBUG   HandlerThread:54163 [system_info.py:_save_conda():224] Saving conda packages done
+2024-09-27 12:07:24,409 INFO    HandlerThread:54163 [system_monitor.py:probe():229] Finished publishing system info
+2024-09-27 12:07:24,411 DEBUG   SenderThread:54163 [sender.py:send():379] send: files
+2024-09-27 12:07:24,411 INFO    SenderThread:54163 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-09-27 12:07:24,412 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: status_report
+2024-09-27 12:07:24,562 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: python_packages
+2024-09-27 12:07:24,563 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: python_packages
+2024-09-27 12:07:24,563 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: stop_status
+2024-09-27 12:07:24,563 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: stop_status
+2024-09-27 12:07:24,564 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: internal_messages
+2024-09-27 12:07:24,938 DEBUG   SenderThread:54163 [sender.py:send():379] send: telemetry
+2024-09-27 12:07:24,940 DEBUG   SenderThread:54163 [sender.py:send():379] send: exit
+2024-09-27 12:07:24,940 INFO    SenderThread:54163 [sender.py:send_exit():586] handling exit code: 1
+2024-09-27 12:07:24,940 INFO    SenderThread:54163 [sender.py:send_exit():588] handling runtime: 3
+2024-09-27 12:07:24,942 INFO    SenderThread:54163 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-09-27 12:07:24,943 INFO    SenderThread:54163 [sender.py:send_exit():594] send defer
+2024-09-27 12:07:24,943 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:24,943 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 0
+2024-09-27 12:07:24,944 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:24,944 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-09-27 12:07:24,944 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 1
+2024-09-27 12:07:24,944 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:24,944 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 1
+2024-09-27 12:07:24,944 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:24,944 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-09-27 12:07:24,944 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 2
+2024-09-27 12:07:24,944 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:24,944 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 2
+2024-09-27 12:07:24,944 INFO    HandlerThread:54163 [system_monitor.py:finish():203] Stopping system monitor
+2024-09-27 12:07:24,945 DEBUG   SystemMonitor:54163 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-09-27 12:07:24,945 INFO    HandlerThread:54163 [interfaces.py:finish():200] Joined cpu monitor
+2024-09-27 12:07:24,945 DEBUG   SystemMonitor:54163 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-09-27 12:07:24,945 INFO    HandlerThread:54163 [interfaces.py:finish():200] Joined disk monitor
+2024-09-27 12:07:24,946 DEBUG   SystemMonitor:54163 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-09-27 12:07:24,946 INFO    HandlerThread:54163 [interfaces.py:finish():200] Joined gpuapple monitor
+2024-09-27 12:07:24,946 INFO    HandlerThread:54163 [interfaces.py:finish():200] Joined memory monitor
+2024-09-27 12:07:24,947 INFO    HandlerThread:54163 [interfaces.py:finish():200] Joined network monitor
+2024-09-27 12:07:24,947 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:24,947 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-09-27 12:07:24,947 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 3
+2024-09-27 12:07:24,947 DEBUG   SenderThread:54163 [sender.py:send():379] send: telemetry
+2024-09-27 12:07:24,947 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:24,947 DEBUG   SenderThread:54163 [sender.py:send():379] send: stats
+2024-09-27 12:07:24,947 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 3
+2024-09-27 12:07:24,948 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:24,948 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-09-27 12:07:24,948 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 4
+2024-09-27 12:07:24,948 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:24,948 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 4
+2024-09-27 12:07:24,948 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:24,948 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-09-27 12:07:24,948 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 5
+2024-09-27 12:07:24,948 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:24,948 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 5
+2024-09-27 12:07:24,948 DEBUG   SenderThread:54163 [sender.py:send():379] send: summary
+2024-09-27 12:07:24,949 INFO    SenderThread:54163 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-09-27 12:07:24,949 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:24,949 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-09-27 12:07:24,949 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 6
+2024-09-27 12:07:24,950 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:24,950 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 6
+2024-09-27 12:07:24,950 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:24,950 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-09-27 12:07:24,953 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: status_report
+2024-09-27 12:07:25,011 INFO    Thread-12 :54163 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/conda-environment.yaml
+2024-09-27 12:07:25,012 INFO    Thread-12 :54163 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/requirements.txt
+2024-09-27 12:07:25,012 INFO    Thread-12 :54163 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/output.log
+2024-09-27 12:07:25,012 INFO    Thread-12 :54163 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/wandb-metadata.json
+2024-09-27 12:07:25,012 INFO    Thread-12 :54163 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/wandb-summary.json
+2024-09-27 12:07:25,231 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 7
+2024-09-27 12:07:25,232 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:25,232 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 7
+2024-09-27 12:07:25,232 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:25,232 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-09-27 12:07:25,570 INFO    wandb-upload_0:54163 [upload_job.py:push():130] Uploaded file /var/folders/4x/krzx13nx7xq26hm5m_1wrp3h0000gn/T/tmp6x8zvyqcwandb/rh21jj4c-wandb-metadata.json
+2024-09-27 12:07:25,575 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: poll_exit
+2024-09-27 12:07:26,018 INFO    Thread-12 :54163 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/config.yaml
+2024-09-27 12:07:26,953 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 8
+2024-09-27 12:07:26,953 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: poll_exit
+2024-09-27 12:07:26,953 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:26,954 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 8
+2024-09-27 12:07:26,954 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:26,954 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-09-27 12:07:26,955 INFO    SenderThread:54163 [job_builder.py:build():440] Attempting to build job artifact
+2024-09-27 12:07:26,956 INFO    SenderThread:54163 [job_builder.py:_get_source_type():569] is repo sourced job
+2024-09-27 12:07:26,990 INFO    SenderThread:54163 [job_builder.py:build():545] adding wandb-job metadata file
+2024-09-27 12:07:26,992 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 9
+2024-09-27 12:07:26,992 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:26,992 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 9
+2024-09-27 12:07:26,992 DEBUG   SenderThread:54163 [sender.py:send():379] send: artifact
+2024-09-27 12:07:27,022 INFO    Thread-12 :54163 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/output.log
+2024-09-27 12:07:27,586 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: poll_exit
+2024-09-27 12:07:29,681 INFO    wandb-upload_0:54163 [upload_job.py:push():88] Uploaded file /var/folders/4x/krzx13nx7xq26hm5m_1wrp3h0000gn/T/tmp_kosob93/wandb-job.json
+2024-09-27 12:07:30,265 INFO    wandb-upload_1:54163 [upload_job.py:push():88] Uploaded file /Users/baeyeongmin/Library/Application Support/wandb/artifacts/staging/tmp4bhy95cj
+2024-09-27 12:07:32,612 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: keepalive
+2024-09-27 12:07:34,661 INFO    SenderThread:54163 [sender.py:send_artifact():1530] sent artifact job-https___github.com_bohblue2_dacon-2024-gbt-hackerton_run.py - {'id': 'QXJ0aWZhY3Q6MTI1MDE5Nzg1OQ==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ2Mjg0OTQ3OQ==', 'latestArtifact': None}}
+2024-09-27 12:07:34,661 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:34,661 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: status_report
+2024-09-27 12:07:34,662 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-09-27 12:07:34,662 INFO    SenderThread:54163 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-09-27 12:07:35,048 INFO    SenderThread:54163 [dir_watcher.py:finish():388] scan: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files
+2024-09-27 12:07:35,049 INFO    SenderThread:54163 [dir_watcher.py:finish():402] scan save: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/requirements.txt requirements.txt
+2024-09-27 12:07:35,049 INFO    SenderThread:54163 [dir_watcher.py:finish():402] scan save: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/output.log output.log
+2024-09-27 12:07:35,053 INFO    SenderThread:54163 [dir_watcher.py:finish():402] scan save: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/config.yaml config.yaml
+2024-09-27 12:07:35,056 INFO    SenderThread:54163 [dir_watcher.py:finish():402] scan save: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/wandb-summary.json wandb-summary.json
+2024-09-27 12:07:35,060 INFO    SenderThread:54163 [dir_watcher.py:finish():402] scan save: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/conda-environment.yaml conda-environment.yaml
+2024-09-27 12:07:35,061 INFO    SenderThread:54163 [dir_watcher.py:finish():402] scan save: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/wandb-metadata.json wandb-metadata.json
+2024-09-27 12:07:35,061 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 10
+2024-09-27 12:07:35,064 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: poll_exit
+2024-09-27 12:07:35,066 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:35,067 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 10
+2024-09-27 12:07:35,068 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:35,068 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-09-27 12:07:35,068 INFO    SenderThread:54163 [file_pusher.py:finish():169] shutting down file pusher
+2024-09-27 12:07:35,619 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: poll_exit
+2024-09-27 12:07:35,619 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: poll_exit
+2024-09-27 12:07:35,711 INFO    wandb-upload_1:54163 [upload_job.py:push():130] Uploaded file /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/output.log
+2024-09-27 12:07:35,912 INFO    wandb-upload_0:54163 [upload_job.py:push():130] Uploaded file /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/requirements.txt
+2024-09-27 12:07:36,235 INFO    wandb-upload_3:54163 [upload_job.py:push():130] Uploaded file /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/wandb-summary.json
+2024-09-27 12:07:36,594 INFO    wandb-upload_4:54163 [upload_job.py:push():130] Uploaded file /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/conda-environment.yaml
+2024-09-27 12:07:36,625 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: poll_exit
+2024-09-27 12:07:36,625 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: poll_exit
+2024-09-27 12:07:36,760 INFO    wandb-upload_2:54163 [upload_job.py:push():130] Uploaded file /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/files/config.yaml
+2024-09-27 12:07:36,966 INFO    Thread-11 (_thread_body):54163 [sender.py:transition_state():614] send defer: 11
+2024-09-27 12:07:36,967 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:36,967 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 11
+2024-09-27 12:07:36,968 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:36,968 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-09-27 12:07:36,968 INFO    SenderThread:54163 [file_pusher.py:join():175] waiting for file pusher
+2024-09-27 12:07:36,969 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 12
+2024-09-27 12:07:36,969 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:36,969 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 12
+2024-09-27 12:07:36,969 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:36,969 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-09-27 12:07:36,970 INFO    SenderThread:54163 [file_stream.py:finish():601] file stream finish called
+2024-09-27 12:07:37,187 INFO    SenderThread:54163 [file_stream.py:finish():605] file stream finish is done
+2024-09-27 12:07:37,188 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 13
+2024-09-27 12:07:37,188 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:37,188 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 13
+2024-09-27 12:07:37,188 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:37,189 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-09-27 12:07:37,189 INFO    SenderThread:54163 [sender.py:transition_state():614] send defer: 14
+2024-09-27 12:07:37,189 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: defer
+2024-09-27 12:07:37,189 DEBUG   SenderThread:54163 [sender.py:send():379] send: final
+2024-09-27 12:07:37,189 INFO    HandlerThread:54163 [handler.py:handle_request_defer():184] handle defer: 14
+2024-09-27 12:07:37,189 DEBUG   SenderThread:54163 [sender.py:send():379] send: footer
+2024-09-27 12:07:37,190 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: defer
+2024-09-27 12:07:37,190 INFO    SenderThread:54163 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-09-27 12:07:37,190 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: poll_exit
+2024-09-27 12:07:37,190 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: poll_exit
+2024-09-27 12:07:37,191 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: server_info
+2024-09-27 12:07:37,191 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: server_info
+2024-09-27 12:07:37,191 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: poll_exit
+2024-09-27 12:07:37,193 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: get_summary
+2024-09-27 12:07:37,194 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: sampled_history
+2024-09-27 12:07:37,194 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: internal_messages
+2024-09-27 12:07:37,531 DEBUG   SenderThread:54163 [sender.py:send_request():406] send_request: poll_exit
+2024-09-27 12:07:37,532 INFO    MainThread:54163 [wandb_run.py:_footer_history_summary_info():3991] rendering history
+2024-09-27 12:07:37,532 INFO    MainThread:54163 [wandb_run.py:_footer_history_summary_info():4023] rendering summary
+2024-09-27 12:07:37,533 INFO    MainThread:54163 [wandb_run.py:_footer_sync_info():3950] logging synced files
+2024-09-27 12:07:37,534 DEBUG   HandlerThread:54163 [handler.py:handle_request():158] handle_request: shutdown
+2024-09-27 12:07:37,534 INFO    HandlerThread:54163 [handler.py:finish():882] shutting down handler
+2024-09-27 12:07:38,199 INFO    WriterThread:54163 [datastore.py:close():296] close: /Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/wandb/run-20240927_120719-9byxjf7m/run-9byxjf7m.wandb
+2024-09-27 12:07:38,536 INFO    SenderThread:54163 [sender.py:finish():1608] shutting down sender
+2024-09-27 12:07:38,537 INFO    SenderThread:54163 [file_pusher.py:finish():169] shutting down file pusher
+2024-09-27 12:07:38,537 INFO    SenderThread:54163 [file_pusher.py:join():175] waiting for file pusher

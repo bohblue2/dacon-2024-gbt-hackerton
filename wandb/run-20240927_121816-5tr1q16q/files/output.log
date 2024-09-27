@@ -1,0 +1,90 @@
+Some weights of BigBirdForSequenceClassification were not initialized from the model checkpoint at monologg/kobigbird-bert-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 1/30:   0%|                                                    | 0/683 [00:00<?, ?it/s]Exception ignored in: <function tqdm.__del__ at 0x11e160900>
+Traceback (most recent call last):
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/tqdm/std.py", line 1148, in __del__
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/tqdm/std.py", line 1290, in close
+    fp_write('')
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/tqdm/std.py", line 1287, in fp_write
+    self.fp.write(str(s))
+                  ^^^^^^
+KeyboardInterrupt:
+Exception ignored in sys.unraisablehook: <built-in function unraisablehook>
+Traceback (most recent call last):
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/sdk/lib/redirect.py", line 648, in write
+    cb(data)
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/sdk/wandb_run.py", line 2310, in <lambda>
+    lambda data: self._console_raw_callback("stderr", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/sdk/wandb_run.py", line 400, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/sdk/wandb_run.py", line 1539, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/wandb/sdk/interface/interface.py", line 676, in publish_output_raw
+    def publish_output_raw(self, name: str, data: str) -> None:
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/run.py", line 50, in <module>
+    main()
+  File "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/run.py", line 39, in main
+    trained_model = train_model(model, train_loader, val_loader, CFG)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/src/training.py", line 37, in train_model
+    outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/transformers/models/big_bird/modeling_big_bird.py", line 2742, in forward
+    outputs = self.bert(
+              ^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/transformers/models/big_bird/modeling_big_bird.py", line 2127, in forward
+    encoder_outputs = self.encoder(
+                      ^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/transformers/models/big_bird/modeling_big_bird.py", line 1622, in forward
+    layer_outputs = layer_module(
+                    ^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/transformers/models/big_bird/modeling_big_bird.py", line 1479, in forward
+    self_attention_outputs = self.attention(
+                             ^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/transformers/models/big_bird/modeling_big_bird.py", line 1380, in forward
+    self_outputs = self.self(
+                   ^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/baeyeongmin/micromamba/envs/enigma_mdms/lib/python3.11/site-packages/transformers/models/big_bird/modeling_big_bird.py", line 397, in forward
+    context_layer = torch.matmul(attention_probs, value_layer)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

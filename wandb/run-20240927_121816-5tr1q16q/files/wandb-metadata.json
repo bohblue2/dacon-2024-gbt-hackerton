@@ -1,0 +1,49 @@
+{
+    "os": "macOS-14.2.1-arm64-arm-64bit",
+    "python": "3.11.9",
+    "heartbeatAt": "2024-09-27T03:18:17.724746",
+    "startedAt": "2024-09-27T03:18:16.978708",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton/run.py",
+    "codePathLocal": "run.py",
+    "codePath": "run.py",
+    "git": {
+        "remote": "https://github.com/bohblue2/dacon-2024-gbt-hackerton",
+        "commit": "4b0cc3b6eecebd7a967b7c82a67240aeee13a238"
+    },
+    "email": "brian.bae.contact@gmail.com",
+    "root": "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton",
+    "host": "baeyeongmin-ui-MacBookAir.local",
+    "username": "baeyeongmin",
+    "executable": "/Users/baeyeongmin/micromamba/envs/enigma_mdms/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 3504,
+        "min": 600,
+        "max": 3504
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3504,
+            "min": 600,
+            "max": 3504
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 228.27386474609375,
+            "used": 204.86547088623047
+        }
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}
