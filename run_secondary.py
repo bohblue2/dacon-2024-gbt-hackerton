@@ -15,6 +15,7 @@ from torch.utils.data import DataLoader
 def main():
     CFG.model_type = "secondary"
     wrun = wandb.init(project="dacon-gbt-2024-hackerton", config=CFG)
+    CFG.experiment_name = wrun.name
 
     # Data loading and preprocessing
     train_df, test_df = load_data(root_path=root_path)
@@ -28,9 +29,9 @@ def main():
     model, tokenizer = get_model_and_tokenizer(CFG.model_name, len(label_encoder), CFG.attention_type)
 
     # Dataset and DataLoader creation
-    train_dataset = TextDataset(train_df.제목_키워드.tolist(), train_df.label.tolist(), tokenizer, max_len=CFG.tokenizer_max_len)
-    val_dataset = TextDataset(val_df.제목_키워드.tolist(), val_df.label.tolist(), tokenizer, max_len=CFG.tokenizer_max_len)
-    test_dataset = TextDataset(test_df.제목_키워드.tolist(), None, tokenizer, max_len=CFG.tokenizer_max_len)
+    train_dataset = TextDataset(train_df.text.tolist(), train_df.label.tolist(), tokenizer, max_len=CFG.tokenizer_max_len)
+    val_dataset = TextDataset(val_df.text.tolist(), val_df.label.tolist(), tokenizer, max_len=CFG.tokenizer_max_len)
+    test_dataset = TextDataset(test_df.text.tolist(), None, tokenizer, max_len=CFG.tokenizer_max_len)
 
     train_loader = DataLoader(train_dataset, batch_size=CFG.batch_size, shuffle=True, num_workers=CFG.num_workers, pin_memory=CFG.pin_memory)
     val_loader = DataLoader(val_dataset, batch_size=CFG.batch_size, shuffle=False, num_workers=CFG.num_workers, pin_memory=CFG.pin_memory)

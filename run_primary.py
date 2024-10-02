@@ -28,9 +28,9 @@ def main():
     model, tokenizer = get_model_and_tokenizer(CFG.model_name, len(label_encoder), CFG.attention_type)
 
     # Dataset and DataLoader creation
-    train_dataset = TextDataset(train_df.제목_키워드.tolist(), train_df.label.tolist(), tokenizer, max_len=CFG.tokenizer_max_len)
-    val_dataset = TextDataset(val_df.제목_키워드.tolist(), val_df.label.tolist(), tokenizer, max_len=CFG.tokenizer_max_len)
-    test_dataset = TextDataset(test_df.제목_키워드.tolist(), None, tokenizer, max_len=CFG.tokenizer_max_len)
+    train_dataset = TextDataset(train_df.text.tolist(), train_df.label.tolist(), tokenizer, max_len=CFG.tokenizer_max_len)
+    val_dataset = TextDataset(val_df.text.to_list(), val_df.label.tolist(), tokenizer, max_len=CFG.tokenizer_max_len)
+    test_dataset = TextDataset(test_df.text.tolist(), None, tokenizer, max_len=CFG.tokenizer_max_len)
 
     train_loader = DataLoader(train_dataset, batch_size=CFG.batch_size, shuffle=True, num_workers=CFG.num_workers, pin_memory=CFG.pin_memory)
     val_loader = DataLoader(val_dataset, batch_size=CFG.batch_size, shuffle=False, num_workers=CFG.num_workers, pin_memory=CFG.pin_memory)
@@ -43,9 +43,6 @@ def main():
     label_decoder = {i: label for label, i in label_encoder.items()}
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     predictions = get_test_predictions(trained_model, test_loader, device, label_decoder)
-
-    # Save predictions
-    submission, file_path = get_sample_submission(wrun.name, predictions)
 
 if __name__ == "__main__":
     main()

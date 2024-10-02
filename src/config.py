@@ -12,6 +12,7 @@ config = {
     "pin_memory": True,
     "patience": 3,
     "warmup_ratio": 0.1,
+    "expereiment_name": "Default",
 }
 
 CFG = SimpleNamespace(**config)
