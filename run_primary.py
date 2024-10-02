@@ -21,7 +21,7 @@ def main():
     train_df = preprocess_data(train_df)
     test_df = preprocess_data(test_df)
 
-    train_df, label_encoder = get_label_encoded(train_df)
+    train_df, label_encoder = get_label_encoded(train_df, model_type=CFG.model_type)
     train_df, val_df = split_data(train_df)
 
     # Model and tokenizer initialization
