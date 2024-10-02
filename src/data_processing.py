@@ -39,7 +39,7 @@ def get_label_encoded(df: pd.DataFrame, model_type: str) -> Tuple[pd.DataFrame, 
         primary_df = df[df['분류'] != '지역'].copy()
 
     label_encoder = {label: i for i, label in enumerate(primary_df['분류'].unique())}
-    primary_df['label'] = df['분류'].map(label_encoder)
+    primary_df['label'] = primary_df['분류'].map(label_encoder)
     return primary_df, label_encoder
 
 def split_data(df: pd.DataFrame, test_size: float = 0.2, stratify_col: str='label') -> Tuple[pd.DataFrame, pd.DataFrame]:
