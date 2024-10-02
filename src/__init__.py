@@ -1,11 +1,11 @@
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-LOCAL: bool = True
-if LOCAL:
+import os
+root_path = "/root/dacon-2024-gbt-hackerton"
+path_exists = os.path.exists(root_path)
+if not path_exists:
     root_path = "/Users/baeyeongmin/Desktop/workspace/dacon-2024-gbt-hackerton"
-else:
-    root_path = "/root/dacon-2024-gbt-hackerton"
 
 import numpy as np
 import torch
