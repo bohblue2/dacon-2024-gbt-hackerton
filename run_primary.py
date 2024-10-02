@@ -15,6 +15,7 @@ from torch.utils.data import DataLoader
 def main():
     CFG.model_type = "primary"
     wrun = wandb.init(project="dacon-gbt-2024-hackerton", config=CFG)
+    CFG.experiment_name = wrun.name
 
     # Data loading and preprocessing
     train_df, test_df = load_data(root_path=root_path)

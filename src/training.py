@@ -9,7 +9,7 @@ def train_model(
     model: torch.nn.Module,
     train_loader: DataLoader,
     val_loader: DataLoader,
-    config: object
+    config: dict 
 ) -> None:
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model.to(device)
@@ -62,7 +62,7 @@ def train_model(
         if val_f1 > best_val_f1:
             best_val_f1 = val_f1
             counter = 0
-            torch.save(model.state_dict(), 'best_model.pth')
+            torch.save(model.state_dict(), f'{config.model_type}_{config.experiment_name}.pth')
         else:
             counter += 1
 
