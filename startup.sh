@@ -9,6 +9,7 @@ else
     conda init bash && source ~/.bashrc
 fi
 
+conda init bash && source ~/.bashrc
 sudo apt-get install unzip -y
 
 # Python env setup
