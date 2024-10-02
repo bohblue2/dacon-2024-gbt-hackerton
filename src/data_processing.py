@@ -37,6 +37,8 @@ def get_label_encoded(df: pd.DataFrame, model_type: str) -> Tuple[pd.DataFrame, 
         primary_df.loc[primary_df['분류'] != '지역', '분류'] = '비지역'
     elif model_type == "secondary":
         primary_df = df[df['분류'] != '지역'].copy()
+    else:
+        primary_df = df
 
     label_encoder = {label: i for i, label in enumerate(primary_df['분류'].unique())}
     primary_df['label'] = primary_df['분류'].map(label_encoder)
