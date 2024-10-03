@@ -1,7 +1,7 @@
 from types import SimpleNamespace
 
 config = {
-    "learning_rate": 5e-5,
+    "learning_rate": 1e-5,
     "epochs": 30,
     "batch_size": 64,
     "weight_decay": 0.01,
