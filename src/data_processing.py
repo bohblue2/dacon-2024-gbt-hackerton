@@ -28,7 +28,7 @@ def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     df['text'] = df['title'] + ' [SEP] ' + df['keywords']
     return df
 
-def get_label_encoded(df: pd.DataFrame, model_type: str) -> Tuple[pd.DataFrame, Dict[str, int]]:
+def get_label_encoded(df: pd.DataFrame, model_type: str = "") -> Tuple[pd.DataFrame, Dict[str, int]]:
     # secondary_df = train_df[train_df['분류'] != '지역'].copy()
     # primary_df = train_df.copy()
     # primary_df.loc[primary_df['분류'] != '지역', '분류'] = '비지역'
