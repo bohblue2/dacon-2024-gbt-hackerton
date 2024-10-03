@@ -1,17 +1,3 @@
-if [ -f /etc/zsh/zshrc ]; then
-    echo "ZSH detected"
-    conda init zsh
-    exec zsh -l
-elif [ -f ~/.bashrc ]; then
-    echo "Bash detected"
-    conda init bash
-    exec bash -l
-else
-    echo "Neither ZSH nor Bash detected, defaulting to Bash"
-    conda init bash
-    exec bash -l
-fi
-
 sudo apt-get install unzip -y
 
 # Python env setup
