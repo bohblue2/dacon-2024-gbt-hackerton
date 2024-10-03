@@ -29,7 +29,8 @@ def train_model(
         model.train()
         total_loss = 0
 
-        for batch in tqdm(train_loader, desc=f'Epoch {epoch + 1}/{config.epochs}'):
+        progress_bar = tqdm(train_loader, desc=f'Epoch {epoch + 1}/{config.epochs}')
+        for batch in progress_bar:
             optimizer.zero_grad()
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
@@ -41,6 +42,9 @@ def train_model(
             loss.backward()
             optimizer.step()
             scheduler.step()
+
+            # Update progress bar with current loss
+            progress_bar.set_postfix({'loss': f'{loss.item():.4f}'})
 
         avg_train_loss = total_loss / len(train_loader)
         val_f1 = evaluate_model(model, val_loader, device)
