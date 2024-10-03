@@ -14,12 +14,12 @@ from torch.utils.data import DataLoader
 
 def main():
     CFG.model_type = "single"
-    wrun = wandb.init(project="dacon-gbt-2024-hackerton", config=CFG)
-    CFG.learning_rate = 1e-5
+    CFG.learning_rate = 3e-5 # initial learning rate 1e-5
     CFG.max_len = 256 + 128
-    CFG.batch_size = 32
-    CFG.experiment_name = wrun.name
+    CFG.batch_size = 24
     CFG.model_name = "klue/roberta-large"
+    wrun = wandb.init(project="dacon-gbt-2024-hackerton", config=CFG)
+    CFG.experiment_name = wrun.name
 
     # Data loading and preprocessing
     train_df, test_df = load_data(root_path=root_path)
