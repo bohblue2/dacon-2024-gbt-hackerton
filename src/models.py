@@ -26,8 +26,10 @@ def get_model_and_tokenizer(
         config = AutoConfig.from_pretrained(model_name)
         config.num_labels = num_labels
         if num_labels > 3:
+            # TODO: Refactor this to be more general(configurable)
             config.focal_loss_alpha = 1
             config.focal_loss_gamma = 2
+            config.focal_loss_reduction = "mean"
             config.problem_type = "sparse_multi_label_classification"
             logger.info("Using sparse multi label classification: Focal Loss")
         model = RobertaForSequenceClassification.from_pretrained(
