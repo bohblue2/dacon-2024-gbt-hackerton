@@ -1,6 +1,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from typing import Dict, Tuple
+import logging
+
+logger = logging.getLogger(__name__)
 
 def load_data(root_path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     train_df = pd.read_csv(f"{root_path}/train.csv")
@@ -29,20 +32,27 @@ def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def get_label_encoded(df: pd.DataFrame, model_type: str = "") -> Tuple[pd.DataFrame, Dict[str, int]]:
-    # secondary_df = train_df[train_df['분류'] != '지역'].copy()
-    # primary_df = train_df.copy()
-    # primary_df.loc[primary_df['분류'] != '지역', '분류'] = '비지역'
-    if model_type == "primary":
-        primary_df = df.copy()
-        primary_df.loc[primary_df['분류'] != '지역', '분류'] = '비지역'
-    elif model_type == "secondary":
-        primary_df = df[df['분류'] != '지역'].copy()
-    else:
-        primary_df = df
+    """
+    Encode labels based on the model type and return the encoded dataframe and label encoder.
 
-    label_encoder = {label: i for i, label in enumerate(primary_df['분류'].unique())}
-    primary_df['label'] = primary_df['분류'].map(label_encoder)
-    return primary_df, label_encoder
+    Args:
+        df (pd.DataFrame): Input dataframe.
+        model_type (str): Type of model ('primary', 'secondary', or '').
+
+    Returns:
+        Tuple[pd.DataFrame, Dict[str, int]]: Encoded dataframe and label encoder dictionary.
+    """
+    processed_df = df.copy()
+
+    if model_type == "primary":
+        processed_df.loc[processed_df['분류'] != '지역', '분류'] = '비지역'
+    elif model_type == "secondary":
+        processed_df = processed_df[processed_df['분류'] != '지역']
+
+    label_encoder = {label: i for i, label in enumerate(processed_df['분류'].unique())}
+    processed_df['label'] = processed_df['분류'].map(label_encoder)
+
+    return processed_df, label_encoder
 
 def split_data(df: pd.DataFrame, test_size: float = 0.2, stratify_col: str='label') -> Tuple[pd.DataFrame, pd.DataFrame]:
     return train_test_split(df, test_size=test_size, stratify=df[stratify_col], random_state=42)
