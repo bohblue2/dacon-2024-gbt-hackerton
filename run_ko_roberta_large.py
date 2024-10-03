@@ -16,7 +16,7 @@ def main():
     CFG.model_type = "single"
     wrun = wandb.init(project="dacon-gbt-2024-hackerton", config=CFG)
     CFG.max_len = 256 + 128
-    CFG.batch_size = 48
+    CFG.batch_size = 32
     CFG.experiment_name = wrun.name
     CFG.model_name = "klue/roberta-large"
 
