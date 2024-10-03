@@ -36,6 +36,7 @@ def train_model(
             labels = batch['labels'].to(device)
             outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
             loss = outputs.loss
+            
             total_loss += loss.item()
             loss.backward()
             optimizer.step()
