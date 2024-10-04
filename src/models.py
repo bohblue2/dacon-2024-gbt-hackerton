@@ -21,6 +21,7 @@ def get_model_and_tokenizer(
         )
         model.classifier.dense = nn.Linear(model.config.hidden_size, model.config.hidden_size)
         model.classifier.out_proj = nn.Linear(model.config.hidden_size, num_labels)
+
     elif model_name == "klue/roberta-large":
         config = AutoConfig.from_pretrained(model_name)
         config.num_labels = num_labels

@@ -27,9 +27,17 @@ def train_model(
 
     for epoch in range(config.epochs):
         model.train()
-        total_loss = 0
-
-        progress_bar = tqdm(train_loader, desc=f'Epoch {epoch + 1}/{config.epochs}')
+        epoch_loss = 0.0
+        
+        progress_bar = tqdm(
+            train_loader,
+            desc=f"Epoch {epoch + 1}/{config.epochs}",
+            unit="batch",
+            ncols=100,
+            leave=False,
+            colour='blue'
+        )
+        
         for batch in progress_bar:
             optimizer.zero_grad()
             input_ids = batch['input_ids'].to(device)
@@ -38,15 +46,16 @@ def train_model(
             outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
             loss = outputs.loss
             
-            total_loss += loss.item()
+            epoch_loss += loss.item()
             loss.backward()
             optimizer.step()
             scheduler.step()
 
-            # Update progress bar with current loss
-            progress_bar.set_postfix({'loss': f'{loss.item():.4f}'})
+            # Update progress bar with current average loss
+            current_loss = epoch_loss / (progress_bar.n + 1)
+            progress_bar.set_postfix(loss=f"{current_loss:.4f}")
 
-        avg_train_loss = total_loss / len(train_loader)
+        avg_train_loss = epoch_loss / len(train_loader)
         val_f1 = evaluate_model(model, val_loader, device)
 
         wandb.log({
