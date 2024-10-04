@@ -15,9 +15,11 @@ from torch.utils.data import DataLoader
 def main():
     CFG.model_type = "single"
     CFG.learning_rate = 3e-5 # initial learning rate 1e-5
+    CFG.weight_decay = 0.05
     CFG.max_len = 256 + 128
     CFG.batch_size = 24
     CFG.model_name = "klue/roberta-large"
+    CFG.patience = 5
     wrun = wandb.init(project="dacon-gbt-2024-hackerton", config=CFG)
     CFG.experiment_name = wrun.name
 
