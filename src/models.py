@@ -31,6 +31,8 @@ def get_model_and_tokenizer(
             config.focal_loss_reduction = "mean"
             config.problem_type = "sparse_multi_label_classification"
             logger.info("Using sparse multi label classification: Focal Loss")
+        else:
+            logger.info("Using binary classification: BCEWithLogitsLoss")
         model = RobertaForSequenceClassification.from_pretrained(
             model_name,
             config=config

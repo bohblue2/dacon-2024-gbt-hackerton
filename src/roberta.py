@@ -40,6 +40,9 @@ from transformers.models.roberta.modeling_roberta import (
 )
 
 from src.losses import FocalLoss
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 @add_start_docstrings(
