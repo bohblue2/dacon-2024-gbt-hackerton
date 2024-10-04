@@ -11,7 +11,6 @@ def get_model_and_tokenizer(
     model_name: str, 
     num_labels: int, 
     attention_type: str,
-
 ):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     if model_name == "monologg/kobigbird-bert-base":
